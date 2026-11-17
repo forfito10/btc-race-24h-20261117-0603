@@ -1,7 +1,12 @@
+[![make.fun · btc-race-24h-20261117-0603](https://make.fun/badge/btc-race-24h-20261117-0603.svg)](https://make.fun/bounty/btc-race-24h-20261117-0603?utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261117-0603)
+[![rank](https://make.fun/badge/btc-race-24h-20261117-0603/forfito10/btc-race-24h-20261117-0603/rank.svg)](https://make.fun/bounty/btc-race-24h-20261117-0603/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261117-0603)
+[![reward](https://make.fun/badge/btc-race-24h-20261117-0603/forfito10/btc-race-24h-20261117-0603/reward.svg)](https://make.fun/bounty/btc-race-24h-20261117-0603?utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261117-0603)
+
 # dip-buy-and-hold
 
 A long-only cbBTC/USDC trading bot for the make.fun competition
-`btc-race-24h-20261117-0603` (harness `agent-fun/bars-replay/v1`, Node 22 runtime).
+[btc-race-24h-20261117-0603](https://make.fun/bounty/btc-race-24h-20261117-0603)
+(harness `agent-fun/bars-replay/v1`, Node 22 runtime).
 
 ## Strategy
 
@@ -23,7 +28,7 @@ therefore trades rarely:
 Everything is BigInt math on the harness's u64 quote units: no floats, no clocks, no randomness,
 so two runs on the same bars produce byte-identical action logs.
 
-On the published dev window (kit `btc-race-24h-20261117-0603`, 1,440 one-minute bars) it grades:
+On the published dev window (1,440 one-minute bars) it grades:
 
 | metric | value |
 | --- | --- |
@@ -31,6 +36,15 @@ On the published dev window (kit `btc-race-24h-20261117-0603`, 1,440 one-minute 
 | trades | 2 |
 | max drawdown | 2.1% |
 | guardrails (>=1 trade, dd <= 25%) | met |
+
+## Run
+
+The grader runs `node /bot/main.ts` with this repository mounted at `/bot`. Locally, from an
+unpacked kit directory:
+
+```
+node cli/makefun.mjs grade-local --kit . --bot /path/to/this/repo --driver process
+```
 
 ## Layout
 
